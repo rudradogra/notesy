@@ -1,0 +1,67 @@
+body {
+    background-color: bisque;
+    font-size: small;
+    transition: background-color 0.5s ,font-size 0.5s, color 0.5s;
+}
+body.darkmode {
+    background-color: rgb(0, 5, 5);
+    
+    color: azure;
+
+}
+#light-switch {
+    align-self: center;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: burlywood;
+    color: crimson;
+    font-size: medium;
+    transition: all 0.6s;
+}
+#light-switch.darkmode {
+    background-color: blue;
+    color: aliceblue;
+}
+#save {
+    align-self: center;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: burlywood;
+    color: crimson;
+    font-size: medium;
+    transition: all 0.6s;
+}
+#save.darkmode {
+    background-color: blue;
+    color: aliceblue;
+}
+#delete {
+    align-self: center;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: burlywood;
+    color: crimson;
+    font-size: medium;
+    transition: all 0.6s;
+}
+#delete.darkmode {
+    background-color: blue;
+    color: aliceblue;
+}
+#exit {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input[type="text"] {
+    width: 80%;  
+    height: 100px;  
+    font-size: 16px;  
+}
+input[type="text"]::placeholder {
+    text-align: start;
+}

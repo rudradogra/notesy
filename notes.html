@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="notesy.css">
+</head>
+<body>
+    <h1>NOTES</h1>
+    <button id="light-switch">change the light</button>
+    
+    <button id="save">save</button>
+    <button id="delete">delete</button>
+    <button id="exit" >
+    <a href="homepagenotes.html">
+        Log out
+    </a></button>
+    <hr>
+    <form>
+        <label for="Notes">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notes : &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+        </label>
+        <input type="reset">
+        <br>
+        <label for="notes"></label>
+        <textarea id="Notes" rows="10" cols="50"></textarea>
+        <br>
+        
+    </form>
+    <script>
+        function updateTextareaSize() {
+            const textarea = document.getElementById("Notes");
+            const rows = Math.floor(window.innerHeight / 100);
+            const cols = Math.floor(window.innerWidth / 10);      
+            textarea.rows = rows;
+            textarea.cols = cols;
+        }
+        updateTextareaSize();
+        document.getElementById("light-switch").addEventListener("click",function(){
+            document.body.classList.toggle("darkmode");
+            document.getElementById("light-switch").classList.toggle("darkmode");
+            document.getElementById("delete").classList.toggle("darkmode");
+            document.getElementById("save").classList.toggle("darkmode");
+        }); 
+        const savedNote = localStorage.getItem("savedNote");
+        if (savedNote) {
+            document.getElementById("Notes").value = savedNote;
+        }
+        document.getElementById("save").addEventListener("click", function () {
+            const notecontent = document.getElementById("Notes").value;
+            localStorage.setItem("savedNote", notecontent);
+        });
+        document.getElementById("delete").addEventListener("click", function(){
+            localStorage.removeItem("savedNote");
+            document.getElementById("Notes").value = "";
+            document.getElementById("Notes").placeholder = "add your notes here...";
+        });
+        
+    </script>
+</body>
+</html>
+<!-- bug when i reset and refresh the last thing i saved comes on. -->
+<!-- to resolve the above, i need to create a delete button which clears the local storage.-->
+<!--
+things which could be further added:
+user creation
+multiple note boxes
+display all the given notes
+give headings to the notes.
+  -->
+  <!--make it irreversible to come back to notes page like they do with college website and bank websites-->

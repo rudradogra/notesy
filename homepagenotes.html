@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <form>
+        <label for="username" >username: </label>
+        <input type="text" id="username" maxlength="26" minlength="4" required>
+        <br><br>
+        <label for="password">password: </label>
+        <input type="password" id="password" minlength="8" required>
+        
+        <table id="datakeep">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>username</th>
+                    <th>password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>0</th>
+                    <th>default</th>
+                    <th>defaultpassword</th>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+
+        <button id="new-user">Sign up</button>
+        <button id="returning-user">Log in</button>
+        <script src="noteswebapp.js" >
+        </script>
+    </form>
+</body>
+</html>
